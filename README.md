@@ -16,35 +16,37 @@ Read our article here: https://blib.la/blog/comfyui-on-runpod
 
 <!-- toc -->
 
-- [Quickstart](#quickstart)
-- [Features](#features)
-- [Config](#config)
-  * [Upload image to AWS S3](#upload-image-to-aws-s3)
-- [Use the Docker image on RunPod](#use-the-docker-image-on-runpod)
-  * [Create your template (optional)](#create-your-template-optional)
-  * [Create your endpoint](#create-your-endpoint)
-  * [GPU recommendations](#gpu-recommendations)
-- [API specification](#api-specification)
-  * [JSON Request Body](#json-request-body)
-  * [Fields](#fields)
-    + ["input.images"](#inputimages)
-- [Interact with your RunPod API](#interact-with-your-runpod-api)
-  * [Health status](#health-status)
-  * [Generate an image](#generate-an-image)
-    + [Example request for SDXL with cURL](#example-request-for-sdxl-with-curl)
-- [How to get the workflow from ComfyUI?](#how-to-get-the-workflow-from-comfyui)
-- [Bring Your Own Models and Nodes](#bring-your-own-models-and-nodes)
-  * [Network Volume](#network-volume)
-  * [Custom Docker Image](#custom-docker-image)
-- [Local testing](#local-testing)
-  * [Setup](#setup)
-    + [Setup for Windows](#setup-for-windows)
-  * [Testing the RunPod handler](#testing-the-runpod-handler)
-  * [Local API](#local-api)
-    + [Access the local Worker API](#access-the-local-worker-api)
-    + [Access local ComfyUI](#access-local-comfyui)
-- [Automatically deploy to Docker hub with GitHub Actions](#automatically-deploy-to-docker-hub-with-github-actions)
-- [Acknowledgments](#acknowledgments)
+- [runpod-worker-comfy](#runpod-worker-comfy)
+  - [Quickstart](#quickstart)
+  - [Features](#features)
+  - [Config](#config)
+    - [Upload image to AWS S3](#upload-image-to-aws-s3)
+  - [Use the Docker image on RunPod](#use-the-docker-image-on-runpod)
+    - [Create your template (optional)](#create-your-template-optional)
+    - [Create your endpoint](#create-your-endpoint)
+    - [GPU recommendations](#gpu-recommendations)
+  - [API specification](#api-specification)
+    - [JSON Request Body](#json-request-body)
+    - [Fields](#fields)
+      - ["input.images"](#inputimages)
+  - [Interact with your RunPod API](#interact-with-your-runpod-api)
+    - [Health status](#health-status)
+    - [Generate an image](#generate-an-image)
+      - [Example request for SDXL with cURL](#example-request-for-sdxl-with-curl)
+  - [How to get the workflow from ComfyUI?](#how-to-get-the-workflow-from-comfyui)
+  - [Bring Your Own Models and Nodes](#bring-your-own-models-and-nodes)
+    - [Network Volume](#network-volume)
+    - [Custom Docker Image](#custom-docker-image)
+    - [Restoring ComfyUI snapshots](#restoring-comfyui-snapshots)
+  - [Local testing](#local-testing)
+    - [Setup](#setup)
+      - [Setup for Windows](#setup-for-windows)
+    - [Testing the RunPod handler](#testing-the-runpod-handler)
+    - [Local API](#local-api)
+      - [Access the local Worker API](#access-the-local-worker-api)
+      - [Access local ComfyUI](#access-local-comfyui)
+  - [Automatically deploy to Docker hub with GitHub Actions](#automatically-deploy-to-docker-hub-with-github-actions)
+  - [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
 
@@ -326,6 +328,14 @@ If you prefer to include your models directly in the Docker image, follow these 
 
 > [!NOTE]  
 > Ensure to specify `--platform linux/amd64` to avoid errors on RunPod, see [issue #13](https://github.com/blib-la/runpod-worker-comfy/issues/13).
+
+### Restoring ComfyUI snapshots
+
+The popular [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) extension allows exporting a snapshot of ComfyUI with all installed extensions as JSON file. See [here](https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#snapshot-manager) on how to use this feature.
+
+To restore a snapshot within the Docker build process and make all listed extensions available in the RunPod worker, simply put the snapshot file named as `snapshot.json` in the root directory and trigger an image build. 
+
+🚨 Some custom nodes and extensions may download models as part of the installation process. This can considerably blow up the image size. Additionally, having many custom nodes and extensions may increase the initialization time of ComfyUI. You should therefore be careful with what exensions to add to your worker.
 
 ## Local testing
 

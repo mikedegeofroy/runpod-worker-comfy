@@ -157,7 +157,9 @@ class TestRunpodWorkerComfy(unittest.TestCase):
         mock_upload_image.return_value = "http://example.com/uploaded/image.png"
 
         # Define the outputs and job_id for the test
-        outputs = {"node_id": {"images": [{"filename": "ComfyUI_00001_.png", "subfolder": "test"}]}}
+        outputs = {
+            "node_id": {"images": [{"filename": "ComfyUI_00001_.png", "subfolder": ""}]}
+        }
         job_id = "123"
 
         # Call the function under test
