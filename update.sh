@@ -14,6 +14,9 @@ pip install --upgrade albucore
 pip install insightface
 pip install spandrel
 
+pip install nvidia-pyindex
+pip install nvidia-tensorrt
+
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack ComfyUI-Impact-Pack/impact_subpack
 python ComfyUI-Impact-Pack/install.py
