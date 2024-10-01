@@ -25,4 +25,4 @@ cd ../..
 
 # Trigger restoring of the snapshot by performing a quick test run
 # Note: We need to use `yes` as some custom nodes may try to install dependencies with pip
-/usr/bin/yes | python main.py --cpu --quick-test-for-ci
+/usr/bin/yes | python3 main.py --cpu --quick-test-for-ci
