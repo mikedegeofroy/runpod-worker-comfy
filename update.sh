@@ -19,7 +19,7 @@ pip install nvidia-tensorrt
 
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack ComfyUI-Impact-Pack/impact_subpack
-python ComfyUI-Impact-Pack/install.py
+python3 ComfyUI-Impact-Pack/install.py
 
 pip install rembg[gpu]
 
