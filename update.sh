@@ -16,9 +16,6 @@ pip install spandrel
 
 python3 -m pip install gitpython
 
-pip install nvidia-pyindex
-pip install nvidia-tensorrt
-
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack ComfyUI-Impact-Pack/impact_subpack
 python3 ComfyUI-Impact-Pack/install.py
