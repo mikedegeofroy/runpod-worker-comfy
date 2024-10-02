@@ -11,7 +11,7 @@ apt install libpython3.10-dev -y
 pip install --upgrade opencv-python-headless
 pip install --upgrade albucore
 
-pip install insightface
+pip install insightface==0.7.3
 pip install spandrel
 
 python3 -m pip install gitpython

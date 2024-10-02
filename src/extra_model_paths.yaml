@@ -11,3 +11,4 @@ runpod_worker_comfy:
   vae: models/vae/
   unet: models/unet/
   ipadapter: models/ipadapter/
+  instantid: models/instantid/
