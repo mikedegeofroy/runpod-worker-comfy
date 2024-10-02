@@ -14,6 +14,8 @@ pip install --upgrade albucore
 pip install insightface
 pip install spandrel
 
+python3 -m pip install gitpython
+
 pip install nvidia-pyindex
 pip install nvidia-tensorrt
 
