@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /comfyui/
+cd /comfyui/custom_nodes
 git pull
 git checkout 22d1241a503461c9ca4f3ad48ddec5ce6e5ee491
 
