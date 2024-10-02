@@ -4,6 +4,21 @@
 TCMALLOC="$(ldconfig -p | grep -Po "libtcmalloc.so.\d" | head -n 1)"
 export LD_PRELOAD="${TCMALLOC}"
 
+# Check if /workspace/ComfyUI/models/insightface is mounted
+if mount | grep "/workspace/ComfyUI/models/insightface" > /dev/null; then
+    echo "/workspace/ComfyUI/models/insightface is mounted."
+
+    # Create a soft link to /comfyui/models/insightface if it doesn't already exist
+    if [ ! -L "/comfyui/models/insightface" ]; then
+        ln -s /workspace/ComfyUI/models/insightface /comfyui/models/insightface
+        echo "Created a soft link to /comfyui/models/insightface."
+    else
+        echo "Soft link already exists."
+    fi
+else
+    echo "/workspace/ComfyUI/models/insightface is not mounted."
+fi
+
 # Serve the API and don't shutdown the container
 if [ "$SERVE_API_LOCALLY" == "true" ]; then
     echo "runpod-worker-comfy: Starting ComfyUI"
