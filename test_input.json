@@ -305,12 +305,6 @@
         },
         "class_type": "ColorCorrect"
       },
-      "1234": {
-        "inputs": {
-          "images": ["1232", 0]
-        },
-        "class_type": "PreviewImage"
-      },
       "1241": {
         "inputs": {
           "strength": 0.5,
@@ -340,12 +334,6 @@
           "image": ["616", 0]
         },
         "class_type": "ColorCorrect"
-      },
-      "1248": {
-        "inputs": {
-          "images": ["1246", 0]
-        },
-        "class_type": "PreviewImage"
       },
       "1250": {
         "inputs": {
