@@ -26,7 +26,7 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git /comfyui
 # Change working directory to ComfyUI
 WORKDIR /comfyui
 
-RUN git checkout 2bd011b043f87023a2d86a82cd23d594a9793e10
+RUN git checkout cf80d28689c1dfa8d22d7fa8e68db7ea3de0fd37
 
 # Install ComfyUI dependencies
 RUN pip3 install --upgrade --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
