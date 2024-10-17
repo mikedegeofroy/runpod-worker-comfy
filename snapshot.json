@@ -33,10 +33,6 @@
       "hash": "6d95aa6758e58dab550725e59dcefbd426c160c7",
       "disabled": false
     },
-    "https://github.com/comfyanonymous/ComfyUI_TensorRT": {
-      "hash": "ffd330d83ad83fd42ff54ecbf76907fe32c95db7",
-      "disabled": false
-    },
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale": {
       "hash": "70083f5d449c498ee0fb35f5293c91cebac4b758",
       "disabled": false
