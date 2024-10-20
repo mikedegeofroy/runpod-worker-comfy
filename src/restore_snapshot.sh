@@ -16,6 +16,8 @@ git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/ComfyUI-M
 
 cd custom_nodes/ComfyUI-Manager
 
+git checkout 61efd606816342cb6b818042b543c518f48e94a2
+
 pip install -r requirements.txt
 
 mkdir startup-scripts
